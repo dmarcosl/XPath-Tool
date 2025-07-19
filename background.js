@@ -27,6 +27,6 @@ function handleRequest(request, sender, cb) {
 }
 chrome.runtime.onMessage.addListener(handleRequest);
 
-chrome.browserAction.onClicked.addListener(function(tab) {
+chrome.action.onClicked.addListener(function(tab) {
   chrome.tabs.sendMessage(tab.id, {type: 'toggleBar'});
 });
